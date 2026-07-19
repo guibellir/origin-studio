@@ -3,19 +3,19 @@ const steps = [
     step: "01",
     title: "Briefing rápido",
     description:
-      "Você conta o que o negócio faz, o público e o objetivo. A gente traduz isso em um site claro e persuasivo.",
+      "Você conta o que o negócio faz, o público e o objetivo. Em poucas horas já desenhamos o caminho do site.",
   },
   {
     step: "02",
-    title: "Design & conteúdo",
+    title: "Design de impacto",
     description:
-      "Estrutura profissional, textos que vendem e visual moderno alinhado à sua marca (ou ajudamos a criar a identidade).",
+      "Layout moderno e chamativo, textos que vendem e visual alinhado à sua marca — pronto para impressionar.",
   },
   {
     step: "03",
-    title: "Publicação completa",
+    title: "No ar em até 72h",
     description:
-      "Domínio, hospedagem, SEO base, WhatsApp, Maps e formulário — tudo configurado. Site no ar, pronto para captar clientes.",
+      "Domínio, hospedagem, SEO base, WhatsApp, Maps e formulário configurados. Site publicado e pronto para captar clientes.",
   },
 ];
 
@@ -23,6 +23,7 @@ export default function HowItWorks() {
   return (
     <section
       id="como-funciona"
+      aria-labelledby="como-funciona-heading"
       className="relative overflow-hidden bg-canvas-dark py-20 sm:py-28"
     >
       <div
@@ -38,10 +39,13 @@ export default function HowItWorks() {
           <p className="text-sm font-medium tracking-wide text-accent-bright">
             Processo simples
           </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-5xl sm:leading-[1.1]">
-            Do zero ao site no ar,
+          <h2
+            id="como-funciona-heading"
+            className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-5xl sm:leading-[1.1]"
+          >
+            Do zero ao site no ar
             <br />
-            <span className="text-white/50">sem complicação.</span>
+            <span className="text-white/50">em até 72 horas.</span>
           </h2>
         </div>
 

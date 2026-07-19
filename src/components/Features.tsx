@@ -1,8 +1,8 @@
 const solutions = [
   {
-    title: "Site moderno",
+    title: "Site moderno e chamativo",
     description:
-      "Design limpo, rápido e responsivo — feito para impressionar no celular e no desktop.",
+      "Visual de alto impacto, limpo e responsivo — feito para impressionar no celular e no desktop.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <rect x="3" y="4" width="18" height="14" rx="2" />
@@ -77,9 +77,9 @@ const solutions = [
     ),
   },
   {
-    title: "Entrega rápida",
+    title: "Entrega em até 72h",
     description:
-      "Processo enxuto e objetivo. Do briefing ao site no ar em prazos curtos e claros.",
+      "Do briefing ao site no ar em até 72 horas — com visual profissional e tudo configurado.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
@@ -90,20 +90,28 @@ const solutions = [
 
 export default function Features() {
   return (
-    <section id="solucoes" className="bg-white py-20 sm:py-28">
+    <section
+      id="solucoes"
+      aria-labelledby="solucoes-heading"
+      className="bg-white py-20 sm:py-28"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-medium tracking-wide text-accent">
             Tudo incluso
           </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-5xl sm:leading-[1.1]">
-            Não vendemos só um site.
+          <h2
+            id="solucoes-heading"
+            className="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-5xl sm:leading-[1.1]"
+          >
+            Visual que chama atenção.
             <br />
-            <span className="text-muted">Vendemos a solução completa.</span>
+            <span className="text-muted">Solução que fecha o cliente.</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
-            Cada projeto nasce pronto para gerar contato e confiança — com as
-            ferramentas que o seu cliente realmente usa no dia a dia.
+            Cada projeto de criação de site é moderno, chamativo e pensado para
+            gerar contato — com WhatsApp, Google Maps, formulário, SEO,
+            hospedagem e domínio. No ar em até 72 horas.
           </p>
         </div>
 
@@ -117,7 +125,10 @@ export default function Features() {
                 {item.icon}
               </div>
               <div className="mb-2 flex items-center gap-2">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-success/15 text-success">
+                <span
+                  className="flex h-5 w-5 items-center justify-center rounded-full bg-success/15 text-success"
+                  aria-hidden
+                >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                     <path d="M5 12l5 5L20 7" />
                   </svg>

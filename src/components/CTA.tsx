@@ -12,12 +12,12 @@ export default function CTA() {
           />
           <div className="relative">
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
-              Pronto para ter um site
-              <br className="hidden sm:block" /> que trabalha por você?
+              Pronto para um site
+              <br className="hidden sm:block" /> moderno e impossível de ignorar?
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-base text-white/55 sm:text-lg">
-              Site moderno, WhatsApp, Maps, formulário, SEO, hospedagem e
-              domínio — com entrega rápida.
+              Visual chamativo, WhatsApp, Maps, formulário, SEO, hospedagem e
+              domínio — no ar em até 72 horas.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href="#contato" className="btn-accent w-full sm:w-auto">

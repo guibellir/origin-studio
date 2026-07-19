@@ -5,12 +5,12 @@ const packages = [
     price: "Sob consulta",
     highlight: false,
     features: [
-      "Site one-page moderno",
+      "One-page moderna e chamativa",
       "WhatsApp integrado",
       "Formulário de contato",
       "SEO básico",
       "Hospedagem + domínio*",
-      "Entrega rápida",
+      "Entrega em até 72h",
     ],
   },
   {
@@ -19,13 +19,13 @@ const packages = [
     price: "Sob consulta",
     highlight: true,
     features: [
-      "Até 5 páginas",
+      "Até 5 páginas de alto impacto",
       "WhatsApp + CTAs estratégicos",
       "Google Maps embutido",
       "Formulário avançado",
       "SEO on-page reforçado",
       "Hospedagem + domínio*",
-      "Ajustes pós-lançamento",
+      "Entrega em até 72h*",
     ],
   },
   {
@@ -40,20 +40,27 @@ const packages = [
       "SEO + performance",
       "Copywriting de conversão",
       "Suporte prioritário",
-      "Estratégia de lançamento",
+      "Prazo sob consulta",
     ],
   },
 ];
 
 export default function Packages() {
   return (
-    <section id="pacotes" className="bg-surface py-20 sm:py-28">
+    <section
+      id="pacotes"
+      aria-labelledby="pacotes-heading"
+      className="bg-surface py-20 sm:py-28"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-medium tracking-wide text-accent">
             Pacotes
           </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-5xl sm:leading-[1.1]">
+          <h2
+            id="pacotes-heading"
+            className="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-5xl sm:leading-[1.1]"
+          >
             Escolha o nível da sua presença digital
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
@@ -134,8 +141,8 @@ export default function Packages() {
         </div>
 
         <p className="mt-8 text-center text-xs text-muted-soft">
-          *Inclusão de domínio e hospedagem conforme o plano e o período
-          contratado. Detalhes no orçamento.
+          *72h com briefing e materiais prontos (Essencial/Profissional).
+          Domínio e hospedagem conforme o plano. Detalhes no orçamento.
         </p>
       </div>
     </section>

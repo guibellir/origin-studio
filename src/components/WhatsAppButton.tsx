@@ -1,10 +1,12 @@
+import { whatsappUrl } from "@/lib/site";
+
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20um%20site%20com%20a%20Origin%20Studio."
+      href={whatsappUrl("Olá! Quero um orçamento para criação de site.")}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Falar no WhatsApp"
+      aria-label="Falar no WhatsApp com a Origin Studio"
       className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/40 transition-transform hover:scale-105 sm:bottom-8 sm:right-8"
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden>

@@ -2,6 +2,7 @@ export default function Hero() {
   return (
     <section
       id="topo"
+      aria-labelledby="hero-heading"
       className="relative overflow-hidden bg-canvas-dark pt-28 pb-20 sm:pt-36 sm:pb-28"
     >
       {/* Ambient glows */}
@@ -31,20 +32,27 @@ export default function Hero() {
         <div className="mx-auto max-w-4xl text-center">
           <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium tracking-wide text-white/80 sm:text-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-success shadow-[0_0_8px_#00d4a1]" />
-            Sites profissionais · Entrega rápida
+            Sites modernos · No ar em até 72h
           </div>
 
-          <h1 className="animate-fade-up delay-100 text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl md:text-7xl">
-            Seu negócio merece um site que{" "}
+          <h1
+            id="hero-heading"
+            className="animate-fade-up delay-100 text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl md:text-7xl"
+          >
+            Criação de sites modernos e{" "}
             <span className="bg-gradient-to-r from-white via-[#c7c9ff] to-[#7d82ff] bg-clip-text text-transparent">
-              vende de verdade
+              chamativos
+            </span>
+            <br className="hidden sm:block" /> que fazem seu negócio{" "}
+            <span className="bg-gradient-to-r from-white via-[#c7c9ff] to-[#7d82ff] bg-clip-text text-transparent">
+              se destacar
             </span>
           </h1>
 
           <p className="animate-fade-up delay-200 mx-auto mt-6 max-w-2xl text-base leading-relaxed text-on-dark-muted sm:text-lg md:text-xl">
-            Criamos sites modernos e profissionais com tudo incluso: WhatsApp,
-            Google Maps, formulário, SEO, hospedagem e domínio. Você foca no
-            negócio — a gente cuida da presença digital.
+            Design profissional, visual de alto impacto e tudo incluso: WhatsApp,
+            Google Maps, formulário de contato, SEO, hospedagem e domínio. Seu
+            site profissional no ar em até 72 horas.
           </p>
 
           <div className="animate-fade-up delay-300 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
@@ -61,10 +69,10 @@ export default function Hero() {
 
           <div className="animate-fade-up delay-400 mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
             {[
-              { value: "7–14", label: "dias de entrega*" },
-              { value: "100%", label: "mobile-first" },
-              { value: "SEO", label: "otimizado Google" },
-              { value: "24/7", label: "site no ar" },
+              { value: "72h", label: "até o site no ar*" },
+              { value: "100%", label: "design sob medida" },
+              { value: "SEO", label: "pronto pro Google" },
+              { value: "Full", label: "solução completa" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -80,7 +88,8 @@ export default function Hero() {
             ))}
           </div>
           <p className="mt-4 text-xs text-white/35">
-            *Prazo típico para o pacote essencial. Projetos maiores sob consulta.
+            *Prazo típico para o pacote essencial, com briefing e materiais
+            prontos. Projetos maiores sob consulta.
           </p>
         </div>
       </div>

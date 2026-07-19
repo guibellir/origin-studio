@@ -12,14 +12,21 @@ export default function Contact() {
   }
 
   return (
-    <section id="contato" className="bg-white py-20 sm:py-28">
+    <section
+      id="contato"
+      aria-labelledby="contato-heading"
+      className="bg-white py-20 sm:py-28"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-sm font-medium tracking-wide text-accent">
               Contato
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-5xl sm:leading-[1.1]">
+            <h2
+              id="contato-heading"
+              className="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-5xl sm:leading-[1.1]"
+            >
               Vamos colocar seu negócio no ar
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
@@ -90,7 +97,12 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-4"
+                name="orcamento"
+                noValidate={false}
+              >
                 <div>
                   <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
                     Nome
@@ -98,6 +110,7 @@ export default function Contact() {
                   <input
                     id="name"
                     name="name"
+                    autoComplete="name"
                     required
                     className="input-field"
                     placeholder="Seu nome"
@@ -111,6 +124,8 @@ export default function Contact() {
                     id="email"
                     name="email"
                     type="email"
+                    autoComplete="email"
+                    inputMode="email"
                     required
                     className="input-field"
                     placeholder="voce@email.com"
@@ -124,6 +139,8 @@ export default function Contact() {
                     id="phone"
                     name="phone"
                     type="tel"
+                    autoComplete="tel"
+                    inputMode="tel"
                     className="input-field"
                     placeholder="(00) 00000-0000"
                   />

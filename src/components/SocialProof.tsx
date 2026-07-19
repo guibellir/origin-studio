@@ -12,7 +12,7 @@ export default function SocialProof() {
     <section className="border-y border-black/[0.06] bg-white py-10">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <p className="text-center text-xs font-medium uppercase tracking-[0.18em] text-muted-soft">
-          Ideal para negócios que precisam de presença digital profissional
+          Ideal para negócios que querem um site moderno e que gera contato
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           {items.map((item) => (
