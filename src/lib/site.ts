@@ -1,14 +1,18 @@
 /**
- * Dados centrais do site — use em metadata, JSON-LD e CTAs.
- * Quando o domínio estiver definido, atualize `siteUrl` ou defina
- * NEXT_PUBLIC_SITE_URL no ambiente.
+ * Dados centrais da marca Origin Studio.
+ * Defina NEXT_PUBLIC_SITE_URL quando o domínio estiver no ar.
  */
 export const siteConfig = {
   name: "Origin Studio",
   legalName: "Origin Studio",
-  tagline: "Criação de sites modernos e profissionais",
+  /** Slogan principal */
+  slogan: "Sites modernos que colocam seu negócio no mapa.",
+  /** Linha curta sob o logo / metadata */
+  tagline: "Criação de sites profissionais",
+  /** Apoio de campanha (prazo) */
+  supportLine: "Do zero ao ar em até 72 horas",
   description:
-    "Criação de sites modernos e profissionais com WhatsApp, Google Maps, formulário de contato, SEO, hospedagem e domínio. Entrega em até 72 horas.",
+    "Origin Studio — criação de sites modernos e profissionais com WhatsApp, Google Maps, formulário, SEO, hospedagem e domínio. Entrega em até 72 horas.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://originstudio.com.br",
@@ -18,10 +22,17 @@ export const siteConfig = {
   /** Substitua pelo número real (somente dígitos, com DDI) */
   whatsapp: "5500000000000",
   whatsappDisplay: "WhatsApp",
-  /** Cidade/estado quando definir — ajuda SEO local */
   areaServed: "Brasil",
   sameAs: [] as string[],
   founder: undefined as string | undefined,
+  colors: {
+    accent: "#4f55f1",
+    accentBright: "#6b70ff",
+    accentDeep: "#3a40c4",
+    ink: "#191c1f",
+    black: "#000000",
+    white: "#ffffff",
+  },
 } as const;
 
 export function whatsappUrl(message?: string) {

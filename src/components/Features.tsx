@@ -116,10 +116,13 @@ export default function Features() {
         </div>
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {solutions.map((item) => (
+          {solutions.map((item, index) => (
             <article
               key={item.title}
               className="card-lift group rounded-3xl border border-black/[0.06] bg-surface p-6 sm:p-7"
+              style={{
+                transitionDelay: `${Math.min(index, 6) * 40}ms`,
+              }}
             >
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-accent shadow-sm ring-1 ring-black/[0.04] transition-colors group-hover:bg-accent group-hover:text-white">
                 {item.icon}

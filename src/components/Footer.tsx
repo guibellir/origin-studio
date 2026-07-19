@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Logo from "@/components/Logo";
 import { siteConfig, whatsappUrl } from "@/lib/site";
 
 export default function Footer() {
@@ -9,17 +11,15 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
-            <a href="/" className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
-                O
-              </span>
-              <span className="text-[15px] font-semibold tracking-tight text-white">
-                Origin<span className="font-normal text-white/60"> Studio</span>
-              </span>
-            </a>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
-              Criação de sites modernos e profissionais. Design chamativo,
-              solução completa e entrega em até 72 horas.
+            <Link href="/" aria-label="Origin Studio — página inicial">
+              <Logo variant="dark" />
+            </Link>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/50">
+              {siteConfig.slogan}
+            </p>
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/35">
+              {siteConfig.supportLine}. Solução completa: design, WhatsApp, SEO,
+              hospedagem e domínio.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function Footer() {
                 <li>
                   <a
                     href={whatsappUrl(
-                      "Olá! Quero um orçamento para criação de site."
+                      "Olá! Quero um orçamento para criação de site com a Origin Studio."
                     )}
                     className="hover:text-white"
                     target="_blank"

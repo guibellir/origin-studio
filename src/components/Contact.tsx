@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { siteConfig, whatsappUrl } from "@/lib/site";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -36,7 +37,9 @@ export default function Contact() {
 
             <div className="mt-10 space-y-4">
               <a
-                href="https://wa.me/5500000000000"
+                href={whatsappUrl(
+                  "Olá! Quero um orçamento para criação de site com a Origin Studio."
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 rounded-2xl border border-black/[0.06] bg-surface p-4 transition-colors hover:bg-surface/80"
@@ -65,9 +68,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <div className="text-sm font-semibold text-ink">E-mail</div>
-                  <div className="text-sm text-muted">
-                    contato@originstudio.com.br
-                  </div>
+                  <div className="text-sm text-muted">{siteConfig.email}</div>
                 </div>
               </div>
             </div>

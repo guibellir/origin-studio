@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Logo from "@/components/Logo";
 
 const links = [
   { href: "/#solucoes", label: "Soluções" },
@@ -12,100 +13,123 @@ const links = [
 ];
 
 export default function BlogHeader() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+    const y = window.scrollY;
+    document.body.classList.add("menu-open");
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${y}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
     return () => {
-      document.body.style.overflow = "";
+      document.body.classList.remove("menu-open");
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, y);
     };
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open
-          ? "border-b border-black/[0.06] bg-white/90 backdrop-blur-xl"
-          : "border-b border-transparent bg-white/80 backdrop-blur-md"
-      }`}
-    >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:h-[4.5rem] sm:px-8">
-        <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white shadow-[0_0_20px_rgba(79,85,241,0.35)]">
-            O
-          </span>
-          <span className="text-[15px] font-semibold tracking-tight text-ink">
-            Origin<span className="font-normal text-muted"> Studio</span>
-          </span>
-        </Link>
-
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Principal">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted transition-colors hover:text-ink"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="hidden md:block">
-          <Link href="/#contato" className="btn-primary !px-5 !py-2.5 text-sm">
-            Solicitar orçamento
+    <>
+      <header className="fixed left-0 right-0 top-0 z-[100] border-b border-black/10 bg-white">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6 md:px-8">
+          <Link href="/" className="min-w-0" aria-label="Origin Studio — início">
+            <Logo variant="light" compact markSize={32} />
           </Link>
-        </div>
 
-        <button
-          type="button"
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-ink md:hidden"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      {open && (
-        <div className="border-t border-black/[0.06] bg-white px-5 pb-8 pt-3 md:hidden">
-          <nav className="flex flex-col gap-0.5">
+          <nav className="hidden items-center gap-6 lg:flex" aria-label="Principal">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
-                className="rounded-2xl px-4 py-3.5 text-base font-medium text-ink hover:bg-surface"
+                className="text-sm font-medium text-muted hover:text-ink"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-          <Link
-            href="/#contato"
-            onClick={() => setOpen(false)}
-            className="btn-primary mt-4 w-full text-sm"
+
+          <div className="hidden lg:block">
+            <Link href="/#contato" className="btn btn-primary !px-5 !py-2.5 text-sm">
+              Solicitar orçamento
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/15 text-ink lg:hidden"
+            onClick={() => setOpen((v) => !v)}
           >
-            Solicitar orçamento
-          </Link>
+            {open ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </header>
+
+      {open && (
+        <div className="fixed inset-0 z-[110] lg:hidden" role="dialog" aria-modal="true">
+          <button
+            type="button"
+            aria-label="Fechar menu"
+            className="absolute inset-0 bg-black/50"
+            onClick={() => setOpen(false)}
+          />
+          <div className="absolute inset-y-0 right-0 flex w-[min(100%,300px)] flex-col bg-white">
+            <div className="flex h-14 items-center justify-between border-b border-black/10 px-4">
+              <span className="text-sm font-semibold text-ink">Menu</span>
+              <button
+                type="button"
+                aria-label="Fechar"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 text-ink"
+                onClick={() => setOpen(false)}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-4">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-2xl px-4 py-3.5 text-base font-medium text-ink"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <div
+              className="border-t border-black/10 p-4"
+              style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
+            >
+              <Link
+                href="/#contato"
+                onClick={() => setOpen(false)}
+                className="btn btn-primary w-full text-sm"
+              >
+                Solicitar orçamento
+              </Link>
+            </div>
+          </div>
         </div>
       )}
-    </header>
+    </>
   );
 }

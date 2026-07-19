@@ -24,7 +24,7 @@ export default function CTA() {
                 Solicitar orçamento
               </a>
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20com%20a%20Origin%20Studio."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ghost-dark w-full sm:w-auto"

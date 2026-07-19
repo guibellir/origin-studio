@@ -11,11 +11,15 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
+/**
+ * Sem wrappers de Reveal: no iOS Safari, opacity/transform no scroll
+ * gerava tela branca e rolagem quebrada.
+ */
 export default function Home() {
   return (
     <>
       <Header />
-      <main id="conteudo" className="flex-1">
+      <main id="conteudo" className="relative z-0 w-full flex-1">
         <Hero />
         <SocialProof />
         <Features />

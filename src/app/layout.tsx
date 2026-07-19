@@ -21,14 +21,16 @@ export const viewport: Viewport = {
   ],
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
   colorScheme: "light",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Criação de sites modernos e profissionais | Origin Studio",
-    template: "%s | Origin Studio",
+    default: `${siteConfig.tagline} | ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -49,10 +51,8 @@ export const metadata: Metadata = {
     "hospedagem de site",
     "registro de domínio",
     "site em 72 horas",
-    "agência de sites",
-    "landing page profissional",
-    "site institucional",
     "Origin Studio",
+    "criação de sites Origin Studio",
   ],
   alternates: {
     canonical: "/",
@@ -65,21 +65,21 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Criação de sites modernos e profissionais | Origin Studio",
+    title: `${siteConfig.name} | ${siteConfig.slogan}`,
     description: siteConfig.description,
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Origin Studio — criação de sites modernos e profissionais",
+        alt: `${siteConfig.name} — ${siteConfig.slogan}`,
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Criação de sites modernos e profissionais | Origin Studio",
+    title: `${siteConfig.name} | ${siteConfig.slogan}`,
     description: siteConfig.description,
     images: ["/opengraph-image"],
   },
@@ -103,6 +103,13 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "BR",
   },
+  icons: {
+    icon: [
+      { url: "/brand/origin-mark.svg", type: "image/svg+xml" },
+      { url: "/brand/origin-mark-icon.jpg", type: "image/jpeg" },
+    ],
+    apple: "/brand/origin-mark-icon.jpg",
+  },
 };
 
 export default function RootLayout({
@@ -113,9 +120,13 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body
+        className="flex min-h-full flex-col bg-background text-foreground"
+        suppressHydrationWarning
+      >
         <JsonLd />
         <a
           href="#conteudo"

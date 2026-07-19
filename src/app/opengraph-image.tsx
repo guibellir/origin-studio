@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Origin Studio — criação de sites modernos e profissionais";
+export const alt = "Origin Studio — Sites modernos que colocam seu negócio no mapa";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,85 +14,86 @@ export default function OpenGraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
+          alignItems: "center",
+          justifyContent: "center",
           background: "#000000",
-          padding: "64px 72px",
           fontFamily: "system-ui, sans-serif",
+          gap: 28,
         }}
       >
+        {/* Mark */}
         <div
           style={{
+            width: 120,
+            height: 120,
             display: "flex",
             alignItems: "center",
-            gap: 16,
+            justifyContent: "center",
+            position: "relative",
           }}
         >
           <div
             style={{
-              width: 48,
-              height: 48,
+              width: 88,
+              height: 88,
               borderRadius: 999,
-              background: "#4f55f1",
+              border: "14px solid transparent",
+              borderTopColor: "#4f55f1",
+              borderLeftColor: "#6b70ff",
+              borderRightColor: "#e8eaf0",
+              borderBottomColor: "#c8ccd8",
+              transform: "rotate(-28deg)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              width: 110,
+              height: 4,
+              background: "linear-gradient(90deg, #fff 0%, #6b70ff 100%)",
+              transform: "rotate(-32deg)",
+              borderRadius: 4,
+            }}
+          />
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+          <div
+            style={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              fontSize: 24,
-              fontWeight: 700,
-            }}
-          >
-            O
-          </div>
-          <div
-            style={{
-              color: "white",
-              fontSize: 28,
+              fontSize: 56,
               fontWeight: 600,
-              letterSpacing: -0.5,
-            }}
-          >
-            Origin Studio
-          </div>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-          <div
-            style={{
+              letterSpacing: 10,
               color: "white",
-              fontSize: 64,
-              fontWeight: 600,
-              lineHeight: 1.05,
-              letterSpacing: -1.5,
-              maxWidth: 900,
             }}
           >
-            Sites modernos e profissionais em até 72 horas
+            <span style={{ color: "#4f55f1" }}>O</span>
+            RIGIN
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div style={{ width: 40, height: 1, background: "#4f55f1" }} />
+            <div
+              style={{
+                color: "#6b70ff",
+                fontSize: 18,
+                fontWeight: 600,
+                letterSpacing: 12,
+              }}
+            >
+              STUDIO
+            </div>
+            <div style={{ width: 40, height: 1, background: "#4f55f1" }} />
           </div>
           <div
             style={{
-              color: "rgba(255,255,255,0.62)",
-              fontSize: 28,
-              lineHeight: 1.35,
-              maxWidth: 820,
+              marginTop: 20,
+              color: "rgba(255,255,255,0.5)",
+              fontSize: 22,
+              letterSpacing: 0.2,
             }}
           >
-            WhatsApp, Google Maps, formulário, SEO, hospedagem e domínio
+            Sites modernos · entrega em até 72h
           </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            gap: 24,
-            color: "rgba(255,255,255,0.5)",
-            fontSize: 20,
-          }}
-        >
-          <span>Design sob medida</span>
-          <span>·</span>
-          <span>Entrega rápida</span>
-          <span>·</span>
-          <span>Solução completa</span>
         </div>
       </div>
     ),

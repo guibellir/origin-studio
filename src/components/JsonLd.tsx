@@ -23,10 +23,11 @@ export default function JsonLd() {
     url: siteConfig.url,
     logo: {
       "@type": "ImageObject",
-      url: `${siteConfig.url}/opengraph-image`,
+      url: `${siteConfig.url}/brand/origin-mark.svg`,
     },
     email: siteConfig.email,
     description: siteConfig.description,
+    slogan: siteConfig.slogan,
     areaServed: siteConfig.areaServed,
     sameAs: siteConfig.sameAs,
     contactPoint: [
@@ -110,7 +111,7 @@ export default function JsonLd() {
     "@type": "WebPage",
     "@id": `${siteConfig.url}/#webpage`,
     url: siteConfig.url,
-    name: "Criação de sites modernos e profissionais | Origin Studio",
+    name: "Criação de sites profissionais | Origin Studio",
     description: siteConfig.description,
     isPartOf: { "@id": `${siteConfig.url}/#website` },
     about: { "@id": `${siteConfig.url}/#service-business` },
