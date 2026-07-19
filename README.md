@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Origin Studio
 
-## Getting Started
+Site institucional da **Origin Studio** — estúdio de criação de sites modernos e profissionais.
 
-First, run the development server:
+> Esboço inicial (v0.1). Marca, domínio e paleta ainda em definição.
+
+## Proposta de valor
+
+Vendemos **solução completa**, não só um layout:
+
+- Site moderno e responsivo
+- WhatsApp integrado
+- Google Maps
+- Formulário de contato
+- SEO para aparecer no Google
+- Hospedagem
+- Domínio
+- Entrega rápida
+
+## Design
+
+Inspirado em produtos fintech premium (ex.: Revolut):
+
+- Tipografia grande e confiante
+- Alternância de seções dark / light
+- Botões pill
+- Muito espaço em branco / respiro visual
+- Acento índigo (`#4f55f1`) sobre preto e neutros
+
+## Stack
+
+- [Next.js](https://nextjs.org) (App Router)
+- TypeScript
+- Tailwind CSS v4
+- React 19
+
+## Desenvolvimento
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando        | Descrição              |
+| -------------- | ---------------------- |
+| `npm run dev`  | Servidor de desenvolvimento |
+| `npm run build`| Build de produção      |
+| `npm run start`| Servidor de produção   |
+| `npm run lint` | ESLint                 |
 
-## Learn More
+## Próximos passos
 
-To learn more about Next.js, take a look at the following resources:
+- [ ] Definir nome final da marca e domínio
+- [ ] Ajustar paleta de cores definitiva
+- [ ] Colocar número real de WhatsApp
+- [ ] Integrar formulário (API / Formspree / e-mail)
+- [ ] Adicionar casos de sucesso / portfólio
+- [ ] Favicon e assets de marca
+- [ ] Deploy (Vercel ou similar)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Licença
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Projeto privado — Origin Studio.
